@@ -1,0 +1,19 @@
+version: "3.4"
+networks:
+  proxynetwork:
+    external: true
+services:
+  www:
+    image: koromerzhin/vuejs:latest
+    volumes:
+      - ${PWD}/apps:/app
+    networks:
+      - proxynetwork
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.www-vuejs.rule=Host(`vuejs.lxc`, `www.vuejs.lxc`)"
+        - "traefik.http.middlewares.wwwredirectregex.redirectregex.regex=^http://vuejs.lxc/(.*)"
+        - "traefik.http.middlewares.wwwredirectregex.redirectregex.replacement=http://www.vuejs.lxc/$${1}"
+        - "traefik.http.routers.www-vuejs.entrypoints=web"
+        - "traefik.http.services.www-vuejs.loadbalancer.server.port=80"
