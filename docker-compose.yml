@@ -16,4 +16,4 @@ services:
         - "traefik.http.middlewares.wwwredirectregex.redirectregex.regex=^http://vuejs.lxc/(.*)"
         - "traefik.http.middlewares.wwwredirectregex.redirectregex.replacement=http://www.vuejs.lxc/$${1}"
         - "traefik.http.routers.www-vuejs.entrypoints=web"
-        - "traefik.http.services.www-vuejs.loadbalancer.server.port=80"
+        - "traefik.http.services.www-vuejs.loadbalancer.server.port=8080"
