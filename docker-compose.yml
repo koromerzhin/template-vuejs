@@ -4,7 +4,7 @@ networks:
     external: true
 services:
   www:
-    image: koromerzhin/vuejs:latest
+    image: koromerzhin/nodejs:4.5.8-vuejs
     volumes:
       - ${PWD}/apps:/app
     networks:
