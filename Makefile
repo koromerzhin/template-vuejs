@@ -35,7 +35,7 @@ docker-deploy: ## deploy
 	docker stack deploy -c docker-compose.yml $(STACK)
 
 docker-image-pull: ## Get docker image
-	docker image pull koromerzhin/vuejs:latest
+	docker image pull koromerzhin/nodejs:4.5.8-vuejs
 
 docker-logs: ## logs docker
 	docker service logs -f --tail 100 --raw $(WWWFULLNAME)
