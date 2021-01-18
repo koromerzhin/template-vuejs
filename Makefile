@@ -62,7 +62,7 @@ git-check: ## CHECK before
 	@make contributors-check -i
 	@git status
 
-install: apps/node_modules ## Installation
+install: node_modules apps/node_modules ## Installation
 	@make docker-deploy -i
 
 linter-readme: ## linter README.md
