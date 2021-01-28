@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-STACK         := angular
+STACK         := vuejs
 NETWORK       := proxynetwork
 
 WWW           := $(STACK)_www
