@@ -12,8 +12,7 @@ services:
     deploy:
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.www-vuejs.rule=Host(`vuejs.lxc`, `www.vuejs.lxc`)"
-        - "traefik.http.middlewares.vuejsredirectregex.redirectregex.regex=^http://vuejs.lxc/(.*)"
-        - "traefik.http.middlewares.vuejsredirectregex.redirectregex.replacement=http://www.vuejs.lxc/$${1}"
-        - "traefik.http.routers.www-vuejs.entrypoints=web"
-        - "traefik.http.services.www-vuejs.loadbalancer.server.port=8080"
+        - "traefik.http.routers.vuejs.rule=Host(`vuejs.traefik.me`)"
+        - "traefik.http.routers.vuejs-tls.tls.domains[0].main=vuejs.traefik.me"
+        - "traefik.http.routers.vuejs-tls.tls.domains[0].sans=vuejs-*.traefik.me"
+        - "traefik.http.services.vuejs.loadbalancer.server.port=8080"
