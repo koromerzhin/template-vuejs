@@ -33,8 +33,7 @@ docker swarm
 
 Hosts:
 
-- 127.0.0.1 vuejs.lxc
-- 127.0.0.1 www.vuejs.lxc
+- vuejs.traefik.me
 
 ## Récupérer les images docker
 
